@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <app-cockpit
     (serverCreated)="onServerAdded($event)"
     (bpCreated)="onBlueprintAdded($event)"
@@ -19,4 +19,22 @@
       </app-server-element>
     </div>
   </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <app-game-controll
+      (newNumber)="onNumberEmitted($event)"
+    ></app-game-controll>
+  </div>
+  <div class="row">
+    <ul>
+      <li *ngFor="let num of history">
+        <app-even *ngIf="num % 2 === 0" [number]="num"></app-even>
+        <app-odd *ngIf="num % 2 !== 0" ></app-odd>
+        
+      </li>
+    </ul>
+  </div>
+
 </div>

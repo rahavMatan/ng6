@@ -31,4 +31,10 @@ export class AppComponent {
   onDestroyFirst() {
     this.serverElements.splice(0, 1);
   }
+
+  history = []
+  onNumberEmitted({count}){
+    console.log('listend ', count);
+    this.history.push(count)
+  }
 }
