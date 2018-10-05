@@ -1,15 +1,13 @@
-import { Component,Output,EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  @Output() navigation = new EventEmitter<string>()
+  @Output() featureSelected = new EventEmitter<string>();
 
-  setNav(location:string){
-    console.log(location);
-    
-    this.navigation.emit(location)
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature);
   }
 }
