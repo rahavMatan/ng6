@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {Ingredient } from '../shared/ingredient.model'
 import { EventEmitter } from '@angular/core';
 export class ShoppingListService {
@@ -24,3 +25,32 @@ export class ShoppingListService {
     }
 
 }
+=======
+import { Ingredient } from '../shared/ingredient.model';
+import { EventEmitter } from '@angular/core';
+
+export class ShoppingListService {
+  ingredientsChanged = new EventEmitter<Ingredient[]>();
+  private ingredients: Ingredient[] = [
+    new Ingredient('Apples', 5),
+    new Ingredient('Tomatoes', 10),
+  ];
+
+  getIngredients() {
+    return this.ingredients.slice();
+  }
+
+  addIngredient(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
+
+  addIngredients(ingredients: Ingredient[]) {
+    // for (let ingredient of ingredients) {
+    //   this.addIngredient(ingredient);
+    // }
+    this.ingredients.push(...ingredients);
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
+}
+>>>>>>> 757c07e4472c423ce9c7495f495e2c591f9b1496

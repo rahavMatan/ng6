@@ -10,17 +10,12 @@ import { RecipeService } from '../recipe.service';
   providers:[]
 })
 export class RecipeListComponent implements OnInit {
+  recipes: Recipe[];
 
-  recipes = [];
-
-  constructor(private recipeService:RecipeService) { }
+  constructor(private recipeService: RecipeService) {
+  }
 
   ngOnInit() {
-    this.recipes = this.recipeService.recipes
+    this.recipes = this.recipeService.getRecipes();
   }
-
-  onRecipeSelected(recipe: Recipe) {
-   this.recipeService.recipeSelceted.emit(recipe);
-  }
-
 }

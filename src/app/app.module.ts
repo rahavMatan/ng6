@@ -13,6 +13,10 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+<<<<<<< HEAD
+=======
+import { AppRoutingModule } from './app-routing.module';
+>>>>>>> 757c07e4472c423ce9c7495f495e2c591f9b1496
 
 @NgModule({
   declarations: [
@@ -29,11 +33,16 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
+<<<<<<< HEAD
   providers: [
     ShoppingListService
   ],
+=======
+  providers: [ShoppingListService],
+>>>>>>> 757c07e4472c423ce9c7495f495e2c591f9b1496
   bootstrap: [AppComponent]
 })
 export class AppModule { }
